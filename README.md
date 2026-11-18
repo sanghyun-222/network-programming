@@ -29,3 +29,54 @@ p3-3.py 문자열에서 모음 개수 세기
 p4-1.py 파일 내용을 줄 번호와 함께 출력하고 저장
 
 p4-2.py 파일의 문자 단어 줄 수 계산
+
+
+---
+
+# TFTP Client 과제
+
+## 1. 프로그램 소개
+Python Socket API를 사용하여 구현한 TFTP Client 프로그램입니다.
+UDP 통신을 통해 서버와 파일 다운로드 및 업로드를 수행합니다.
+
+## 2. 주요 기능
+- GET: 서버에서 파일 다운로드
+- PUT: 서버로 파일 업로드
+- 서버 IP 주소 입력
+- 포트 번호 설정 (-p)
+- 서버 응답 시간 초과 처리
+- TFTP 서버 오류 메시지 처리
+
+## 3. 실행 방법
+
+### 파일 다운로드
+```bash
+python mytftp.py 서버IP get 파일이름
+```
+
+### 파일 업로드
+```bash
+python mytftp.py 서버IP put 파일이름
+```
+
+### 포트 번호 지정
+```bash
+python mytftp.py 서버IP -p 포트번호 get 파일이름
+python mytftp.py 서버IP -p 포트번호 put 파일이름
+```
+
+## 4. 실행 예시
+다운로드:
+```bash
+python mytftp.py 203.250.133.88 get tftp.conf
+```
+
+업로드:
+```bash
+python mytftp.py 203.250.133.88 -p 69 put tftp.txt
+```
+
+## 5. 개발 환경
+- Language: Python
+- Protocol: TFTP
+- Communication: UDP Socket
